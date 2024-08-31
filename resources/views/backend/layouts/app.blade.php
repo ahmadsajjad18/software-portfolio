@@ -48,7 +48,7 @@
 <!-- Main Wrapper -->
 <div class="flex h-screen pt-16">
     <!-- Sidebar -->
-    <aside class="w-64 bg-purple-700 text-white h-full flex-shrink-0">
+    <aside class="w-60 bg-purple-700 text-white h-full flex-shrink-0">
         @include('backend.sidebar')
     </aside>
 

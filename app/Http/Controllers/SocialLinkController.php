@@ -12,8 +12,17 @@ class SocialLinkController extends Controller
      */
     public function dashboard()
     {
+        $socialPlatforms = [
+            'facebook'  => 'Facebook',
+            'twitter'   => 'Twitter',
+            'linkedin'  => 'LinkedIn',
+            'youtube'   => 'YouTube',
+            'instagram' => 'Instagram',
+            'github'    => 'GitHub',
+            'threads'   => 'Threads',
+        ];
         $socialLinks = SocialLink::all();
-        return view('backend.social_link.dashboard', compact('socialLinks'));
+        return view('backend.social_link.dashboard', compact('socialLinks','socialPlatforms'));
     }
 
     /**

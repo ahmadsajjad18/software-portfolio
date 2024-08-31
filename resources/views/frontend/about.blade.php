@@ -2,10 +2,9 @@
     <!-- container -->
     <div class="container text-center">
         <!-- about wrapper -->
-        <div class="about ">
+        <div class="about">
             <div class="about-img-holder image-upload-container">
-                <img src="{{ asset('storage/' . $about->profile_image) }}" class="about-img "
-                     alt="Profile Image">
+                <img src="{{ asset('storage/' . $about->profile_image) }}" class="about-img rounded-full shadow-2xl" alt="Profile Image">
             </div>
             <div class="about-caption">
                 <p class="section-subtitle">Who Am I ?</p>

@@ -18,11 +18,10 @@
 
     <!-- MDB CSS -->
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
 
 
 </head>
@@ -32,26 +31,26 @@
 <!-- Page Navbar -->
 <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
     <div class="container">
-        <a class="logo" href="#">Meyawo</a>
+        <a class="logo" href="#">Softi</a>
         <ul class="nav">
             <li class="item">
-                <a class="link" href="#home">Home</a>
+                <a class="btn btn-primary rounded" href="#home">Home</a>
             </li>
             <li class="item">
-                <a class="link" href="#about">About</a>
+                <a class="btn btn-primary rounded" href="#about">About</a>
             </li>
             <li class="item">
-                <a class="link" href="#portfolio">Portfolio</a>
+                <a class="btn btn-primary rounded" href="#portfolio">Portfolio</a>
             </li>
             <li class="item">
-                <a class="link" href="#testmonial">Testmonial</a>
+                <a class="btn btn-primary rounded" href="#testmonial">Testmonial</a>
             </li>
             <li class="item">
-                <a class="link" href="#contact">Contact</a>
+                <a class="btn btn-primary rounded" href="#contact">Contact</a>
             </li>
-            <li class="item ml-md-3">
-                <a href="components.html" class="btn btn-primary">Components</a>
-            </li>
+{{--            <li class="item ml-md-3">--}}
+{{--                <a href="components.html" class="btn btn-primary">Components</a>--}}
+{{--            </li>--}}
         </ul>
         <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
             <div class="hamburger-box">
@@ -68,18 +67,22 @@
 
 <!-- about section -->
 @include('frontend.about', ['about' => $about])
- <!-- end of about section -->
+<!-- end of about section -->
 
 <!-- service section -->
-@include('frontend.service',['services'=> $services])
+@if(! $services->isEmpty())
+    @include('frontend.service',['services'=> $services])
+@endif
 <!-- end of service section -->
 
 <!-- portfolio section -->
-@include('frontend.portfolio',['portfolios', $portfolios])
+@if(! $portfolios->isEmpty())
+    @include('frontend.portfolio',['portfolios', $portfolios])
+@endif
 <!-- end of portfolio section -->
 
 <!-- pricing section -->
-@include('frontend.pricing')
+
 <!-- end of pricing section -->
 
 <!-- section -->
@@ -100,7 +103,9 @@
 </section> <!-- end of section -->
 
 <!-- testimonial section -->
-@include('frontend.testimonial',['testimonial',$testimonials])
+@if(! $testimonials->isEmpty())
+    @include('frontend.testimonial',['testimonial',$testimonials])
+@endif
 <!-- end of testimonial section -->
 
 <!-- contact section -->
@@ -112,25 +117,14 @@
         <div class="d-flex justify-content-center space-x-4">
             @foreach($socialLinks as $link)
                 <a href="{{ $link->url }}" target="_blank" class="text-gray-400 mx-2 hover:text-white">
-                    @if($link->name == 'facebook')
-                        <i class="fab fa-facebook-f"></i>
-                    @elseif($link->name == 'twitter')
-                        <i class="fab fa-twitter"></i>
-                    @elseif($link->name == 'linkedin')
-                        <i class="fab fa-linkedin-in"></i>
-                    @elseif($link->name == 'youtube')
-                        <i class="fab fa-youtube"></i>
-                    @elseif($link->name == 'instagram')
-                        <i class="fab fa-instagram"></i>
-                    @endif
-
+                    <i class="fab fa-{{$link->name}}"></i>
                 </a>
             @endforeach
         </div>
     </div>
 </footer>
 
- <!-- end of page footer -->
+<!-- end of page footer -->
 
 <!-- core  -->
 <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
@@ -145,8 +139,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
 <!-- MDB JS -->
-
-
 
 
 </body>

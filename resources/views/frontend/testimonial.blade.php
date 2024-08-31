@@ -21,13 +21,13 @@
                                     {{ $testimonial->description }}
                                 </p>
                             </div>
-                            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
-                                @for ($i = 0; $i < 5; $i++)
-                                    <li>
-                                        <i class="{{ $i < $testimonial->rating ? 'fas' : 'far' }} fa-star fa-sm"></i>
-                                    </li>
-                                @endfor
-                            </ul>
+{{--                            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">--}}
+{{--                                @for ($i = 0; $i < 5; $i++)--}}
+{{--                                    <li>--}}
+{{--                                        <i class="{{ $i < $testimonial->rating ? 'fas' : 'far' }} fa-star fa-sm"></i>--}}
+{{--                                    </li>--}}
+{{--                                @endfor--}}
+{{--                            </ul>--}}
                         </div>
                     </div>
                 @endforeach

@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\PricingPlanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SocialLinkController;
@@ -59,6 +60,16 @@ Route::middleware('auth')->group(function () {
         Route::post('update/{id}',    [PortfolioController::class, 'update'])->name('portfolio.update');
         Route::delete('delete/{id}',  [PortfolioController::class, 'destroy'])->name('portfolio.destroy');
     });
+
+    Route::prefix('pricing-plans')->group(function() {
+        Route::get('/dashboard',      [PricingPlanController::class, 'index'])->name('pricing-plan.index');
+        Route::post('/store',         [PricingPlanController::class, 'store'])->name('pricing-plan.store');
+        Route::get('/{id}/edit',      [PricingPlanController::class, 'edit'])->name('pricing-plan.edit');
+        Route::put('/{id}/update',    [PricingPlanController::class, 'update'])->name('pricing-plan.update');
+        Route::delete('/delete/{id}', [PricingPlanController::class, 'destroy'])->name('pricing-plan.destroy');
+    });
+
+
 
     Route::prefix('socialLink')->group(function() {
         Route::get('dashboard',       [SocialLinkController::class, 'dashboard'])->name('socialLink.dashboard');

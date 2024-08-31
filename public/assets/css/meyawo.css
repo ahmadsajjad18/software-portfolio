@@ -4553,7 +4553,10 @@ input[type="button"].btn-block {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
+    color: #000000;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), /* Outer glow */
+    0 0 20px rgba(0, 0, 0, 0.3);
+    -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   padding-left: 0;
@@ -11597,7 +11600,7 @@ pre .code {
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   width: 30px;
   height: 3px;
-  background-color: #444;
+  background-color: #131313;
   border-radius: 10px;
   position: absolute;
   -webkit-transition-property: -webkit-transform;
@@ -11671,6 +11674,7 @@ pre .code {
   left: 0;
   width: 100%;
   z-index: 1000;
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -11692,10 +11696,13 @@ pre .code {
 }
 
 .custom-navbar .logo {
-  font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1300 - 300)));
-  text-decoration: none;
-  color: #fff;
+    font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1300 - 300)));
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgb(82, 68, 138), /* Outer glow */
+    0 0 20px rgb(255, 255, 255); /* Inner glow */
 }
+
 
 .custom-navbar .container {
   -webkit-box-flex: 1;
@@ -11704,6 +11711,7 @@ pre .code {
           flex-grow: 1;
   min-height: 100px;
   display: -webkit-box;
+
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -11727,9 +11735,24 @@ pre .code {
   padding-top: 5px;
 }
 
-.custom-navbar .hamburger .hamburger-inner, .custom-navbar .hamburger .hamburger-inner::before, .custom-navbar .hamburger .hamburger-inner::after {
-  background: #fff;
+.custom-navbar .hamburger .hamburger-inner,
+.custom-navbar .hamburger .hamburger-inner::before,
+.custom-navbar .hamburger .hamburger-inner::after {
+    background: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8),
+    0 0 15px rgba(255, 255, 255, 0.6),
+    0 0 20px rgb(10, 10, 10);
+    transition: box-shadow 0.3s ease;
 }
+
+.custom-navbar .hamburger:hover .hamburger-inner,
+.custom-navbar .hamburger:hover .hamburger-inner::before,
+.custom-navbar .hamburger:hover .hamburger-inner::after {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.9),
+    0 0 20px rgba(255, 255, 255, 0.7),
+    0 0 25px rgba(255, 255, 255, 0.5);
+}
+
 
 .custom-navbar .nav {
   list-style-type: none;
@@ -11751,7 +11774,7 @@ pre .code {
 }
 
 .custom-navbar .nav .item .link {
-  color: #fff;
+  color: #000000;
   font-weight: 500;
   text-decoration: none;
 }
@@ -11778,7 +11801,7 @@ pre .code {
 }
 
 .custom-navbar.affix .hamburger-inner, .custom-navbar.affix .hamburger-inner::before, .custom-navbar.affix .hamburger-inner::after {
-  background: #6c757d;
+  background: #695aa6;
 }
 
 @media (min-width: 768px) {
@@ -11961,7 +11984,7 @@ pre .code {
     width: 100%;
     margin: auto;
     display: block;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid #000000;
     padding: 13px;
     opacity: 0;
     visibility: hidden;
@@ -12234,6 +12257,10 @@ pre .code {
 .about-img-holder .about-img {
   width: 100%;
   margin-bottom: 15px;
+}
+.about-img {
+    border-radius: 10%;
+    box-shadow: 0 4px 6px rgba(1, 1, 1, 0.2), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .about-caption {

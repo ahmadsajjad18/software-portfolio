@@ -27,10 +27,15 @@
 
                                 <!-- Name Section -->
                                 <div class="mb-4">
-                                    <label for="name" class="block text-gray-700 font-bold">Enter Name</label>
-                                    <input type="text" id="name" name="name" class="mt-1 block w-full border p-2 rounded @error('name') is-invalid @enderror" placeholder="Enter Name">
-                                    @error('name')
-                                    <div id="imageError" class="invalid-feedback">
+                                    <label for="name" class="block text-gray-700 font-bold">Select Platform</label>
+                                    <select id="name" name="name" class="mt-1 block w-full border p-2 rounded @error('social_platform') is-invalid @enderror">
+                                        <option value="">Select Social Platform</option>
+                                        @foreach($socialPlatforms as $key => $platform)
+                                            <option value="{{ $key }}">{{ $platform }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('social_platform')
+                                    <div id="socialPlatformError" class="invalid-feedback">
                                         <span>{{ $message }}</span>
                                     </div>
                                     @enderror

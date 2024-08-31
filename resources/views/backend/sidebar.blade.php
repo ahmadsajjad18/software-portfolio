@@ -1,4 +1,4 @@
-<div class="flex flex-col md:flex-row">
+<div class="">
     <!-- Sidebar -->
     <div id="sidebar" class=" bg-purple-700 text-white fixed md:relative h-full md:h-auto transform -translate-x-full md:translate-x-0 transition-transform">
         <div class="h-16 flex items-center justify-between px-4 shadow-sm">
@@ -16,6 +16,7 @@
             <a href="{{ route('portfolio.dashboard') }}" class="block px-4 py-2 text-white rounded hover:bg-purple-800">Portfolio</a>
             <a href="{{ route('testimonial.dashboard') }}" class="block px-4 py-2 text-white rounded hover:bg-purple-800">Testimonial</a>
             <a href="{{ route('socialLink.dashboard') }}" class="block px-4 py-2 text-white rounded hover:bg-purple-800">Social Link</a>
+            <a href="{{ route('pricing-plan.index') }}" class="block px-4 py-2 text-white rounded hover:bg-purple-800">Pricing Plan</a>
         </nav>
     </div>
 
