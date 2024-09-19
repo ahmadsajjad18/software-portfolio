@@ -16,7 +16,6 @@
             <a href="{{ route('portfolio.dashboard') }}" class="block px-4 py-2 text-white rounded hover:bg-purple-800">Portfolio</a>
             <a href="{{ route('testimonial.dashboard') }}" class="block px-4 py-2 text-white rounded hover:bg-purple-800">Testimonial</a>
             <a href="{{ route('socialLink.dashboard') }}" class="block px-4 py-2 text-white rounded hover:bg-purple-800">Social Link</a>
-            <a href="{{ route('pricing-plan.index') }}" class="block px-4 py-2 text-white rounded hover:bg-purple-800">Pricing Plan</a>
         </nav>
     </div>
 
