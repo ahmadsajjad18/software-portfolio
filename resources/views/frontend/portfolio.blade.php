@@ -8,13 +8,13 @@
         <div class="row">
             @foreach($portfolios as $portfolio)
                 <div class="col-md-4">
-                    <a href="{{ $portfolio->url }}" class="portfolio-card">
-                        <img src="{{ asset('storage/' . $portfolio->image) }}" class="portfolio-card-img"
+                    <a href="{{ $portfolio->url ?? 'No url' }}" class="portfolio-card">
+                        <img src="{{ asset('storage/' . $portfolio->image ?? 'No Image') }}" class="portfolio-card-img"
                              alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                         <span class="portfolio-card-overlay">
                                 <span class="portfolio-card-caption">
-                                    <h5>{{ $portfolio->name }}</h5>
-                                        <p class="font-weight-normal">Category: {{ $portfolio->category }}</p>
+                                    <h5>{{ $portfolio->name ?? 'No name'}}</h5>
+                                        <p class="font-weight-normal">Category: {{ $portfolio->category ?? 'No category'}}</p>
                                 </span>
                             </span>
                     </a>

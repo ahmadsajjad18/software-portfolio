@@ -10,14 +10,14 @@
                 <div class="row wrap-service-24">
                     <!-- Loop through services -->
                     @foreach($services as $service)
-                        <div class="col-lg-4 col-md-6 mb-4"> <!-- Adjusted column size -->
+                        <div  class="col-lg-4 col-md-6 mb-4"> <!-- Adjusted column size -->
                             <div class="card rounded card-shadow border-0 h-100">
                                 <a href="javascript:void(0)" class="card-hover py-4 text-center d-block rounded"
-                                   data-title="{{ $service->name }}"
-                                   data-description="{{ $service->description }}"
-                                   data-image="{{ asset('storage/' . $service->image) }}">
-                                    <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->name }}" class="img-fluid modal-logo mb-3" /><br>
-                                    <h6 class="card-title">{{ $service->name }}</h6>
+                                   data-title="{{ $service->name ?? 'No name' }}"
+                                   data-description="{{ $service->description ?? 'No description'}}"
+                                   data-image="{{ asset('storage/' . $service->image ?? 'No image') }}">
+                                    <img src="{{ asset('storage/' . $service->image ?? 'No image') }}" alt="{{ $service->name ?? 'No name' }}" class="img-fluid modal-logo mb-3" /><br>
+                                    <h6 class="card-title">{{ $service->name ?? 'No name' }}</h6>
                                     <span class="ser-title">Click Me!</span>
                                 </a>
                             </div>

@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\HomeRequest;
 use App\Models\Home;
-use Illuminate\Http\Request;
+use App\Models\User;
+use http\Env\Request;
+use http\Env\Response;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -20,6 +24,7 @@ class HomeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+
 
 
     /**
@@ -38,9 +43,9 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Home $home)
+    public function edit($id)
     {
-        //
+
     }
 
     /**
